@@ -7,7 +7,7 @@
     <em:name>Blippex</em:name>
     <em:version>1.0</em:version>
     <em:creator></em:creator>
-		<em:iconURL>chrome://Blippex/content/firefox/images/logo128.png</em:iconURL>
+		<em:iconURL>chrome://Blippex/content/firefox/images/icon128.png</em:iconURL>
     <em:homepageURL>https://www.blippex.org/</em:homepageURL>
     <em:contributor></em:contributor>
     <em:description>some description goes here</em:description>
