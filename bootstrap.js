@@ -70,7 +70,9 @@ function include(path, scope) {
 }
 
 function startup(data, reason) {
+  include("includes/buttons.js");
   include("includes/utils.js");
+  icon = addon.getResourceURI("chrome/content/firefox/images/toolbar.png").spec;
   setDefaultPrefs();
   let wm = Cc["@mozilla.org/appshell/window-mediator;1"].getService(Ci.nsIWindowMediator);
   let windows = wm.getEnumerator("navigator:browser");
@@ -83,6 +85,21 @@ function startup(data, reason) {
     wm.removeListener(WindowListener);
   })
 };
+
+function createButton(doc){
+  let _toolbarButton = doc.createElement("toolbarbutton");
+  _toolbarButton.setAttribute("id", "Archify-toolbar-button");
+  _toolbarButton.setAttribute("type", "button");
+  _toolbarButton.setAttribute("label", "archify");
+  _toolbarButton.setAttribute("image", "chrome://Blippex/content/firefox/images/toolbar.png");
+  _toolbarButton.setAttribute("class", "toolbarbutton-1 chromeclass-toolbar-additional");
+  //_toolbarButton.setAttribute("popup", "Archify-popup-main");
+  restorePosition(doc, _toolbarButton);
+  //just destroy the button when unloading the plugin
+  unload(function() {
+    _toolbarButton.parentNode.removeChild(_toolbarButton);
+  })
+}
 
 function intializeBlippex(window) {
   if (!window || typeof (window.blippex) != 'undefined') {
@@ -103,6 +120,7 @@ function intializeBlippex(window) {
   let doc = window.document,
       win = doc.querySelector("window");
   window.blippex.core.doc = doc;
+  createButton(doc);
   unload(function(){
     try{
       window.blippex.core.uninitializationHandler();
