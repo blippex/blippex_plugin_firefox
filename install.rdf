@@ -6,11 +6,11 @@
     <em:type>2</em:type>
     <em:name>Blippex</em:name>
     <em:version>1.0</em:version>
-    <em:creator></em:creator>
+    <em:creator>blippex</em:creator>
 		<em:iconURL>chrome://Blippex/content/firefox/images/icon48.png</em:iconURL>
     <em:homepageURL>https://www.blippex.org/</em:homepageURL>
     <em:contributor></em:contributor>
-    <em:description>some description goes here</em:description>
+    <em:description>A secure and anonymous search engine made by the people, for the people</em:description>
     <em:targetApplication>
       <Description>
         <em:id>{ec8030f7-c20a-464f-9b0e-13a3a9e97384}</em:id> <!-- Firefox -->
