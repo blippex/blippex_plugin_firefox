@@ -86,18 +86,65 @@ function startup(data, reason) {
   })
 };
 
+function constructElement(doc, tagName, propList, where){
+  var _element = doc.createElement(tagName);
+  for (var key in (propList || {})){
+    switch (key){
+      case 'class':
+        _element.className = propList[key];
+        break;
+      case 'id':
+        _element.id = propList[key];
+        break;
+      default:
+        _element.setAttribute(key, propList[key])
+    }
+  }
+  if (where){
+    where.appendChild(_element)
+  }
+  return _element;
+}
+
 function createButton(doc){
   let _toolbarButton = doc.createElement("toolbarbutton");
-  _toolbarButton.setAttribute("id", "Archify-toolbar-button");
+  _toolbarButton.setAttribute("id", "Blippex-toolbar-button");
   _toolbarButton.setAttribute("type", "button");
-  _toolbarButton.setAttribute("label", "archify");
+  _toolbarButton.setAttribute("label", "blippex");
   _toolbarButton.setAttribute("image", "chrome://Blippex/content/firefox/images/toolbar.png");
   _toolbarButton.setAttribute("class", "toolbarbutton-1 chromeclass-toolbar-additional");
-  //_toolbarButton.setAttribute("popup", "Archify-popup-main");
+  _toolbarButton.setAttribute("popup", "Blippex-popup-main");
   restorePosition(doc, _toolbarButton);
   //just destroy the button when unloading the plugin
   unload(function() {
     _toolbarButton.parentNode.removeChild(_toolbarButton);
+  })
+}
+
+function createPopup(doc, win){
+  var _panel = constructElement(doc, 'panel', {
+    'id':             'Blippex-popup-main',
+    'class':          'blippexPopup',
+    'noautohide':     'false',
+    'position':       'after_end',
+    'style':          '-moz-appearance: none !important; -moz-border-radius: 8px;width:306px;color:#FFFFFF !important; background-color: #FFFFFF !important',
+    'width':          '450px'
+  });
+  var _browser = constructElement(doc, 'browser', {
+    'id':   'blippex-frame',
+    'flex':  1,
+    'type':   'chrome'
+  }, _panel);
+  _browser.setAttribute('src', 'chrome://Blippex/content/common/html/popup.html');
+  _panel.addEventListener('popupshowing', function(){(new XPCNativeWrapper(_browser.contentWindow).wrappedJSObject).blippex.popup._init();});
+  _panel.addEventListener('popupshown', function(){(new XPCNativeWrapper(_browser.contentWindow).wrappedJSObject).blippex.popup._shown();});
+  unload(function(){
+    _panel.removeEventListener('popupshowing', function(){(new XPCNativeWrapper(_browser.contentWindow).wrappedJSObject).blippex.popup._init();});
+    _panel.removeEventListener('popupshown', function(){(new XPCNativeWrapper(_browser.contentWindow).wrappedJSObject).blippex.popup._shown();});
+  });
+  doc.getElementById('mainPopupSet').appendChild(_panel);
+  unload(function() {
+    _panel.parentNode.removeChild(_panel);
   })
 }
 
@@ -116,10 +163,12 @@ function intializeBlippex(window) {
   include("chrome/content/common/js/api/upload.js", window);
   include("chrome/content/common/js/libs/timespent.js", window);
   include("chrome/content/common/js/libs/misc.js", window);
+  include("chrome/content/common/js/libs/disabled.js", window);
   include("chrome/content/firefox/js/core.js", window);
   let doc = window.document,
       win = doc.querySelector("window");
   window.blippex.core.doc = doc;
+  createPopup(doc, window);
   createButton(doc);
   unload(function(){
     try{

@@ -3,10 +3,31 @@ blippex.define('blippex.core', {
 	windowId: null,
 	pDoc: null,
 	_unloaders: [],
+	
+	
+	icons: {
+		'active': {
+			'icon':  'chrome://Blippex/content/firefox/images/toolbar.png'
+		},
+		'inactive': {
+			'icon':  'chrome://Blippex/content/firefox/images/toolbar_disabled.png'
+		}
+	},
+
+	
 	init: function() {
 		blippex.core.windowId = new Date().getTime();
 		blippex.libs.timespent.init();
+		blippex.libs.disabled.init();
+		blippex.core.changeIcon();
 	},
+	
+	changeIcon: function() {
+		var pToolbarIcon = document.getElementById('Blippex-toolbar-button');
+		if (pToolbarIcon){
+			pToolbarIcon.setAttribute("image", blippex.core.icons[blippex.libs.disabled.isEnabled() ? 'active' : 'inactive'].icon);
+		}
+  },
 	
 	onLoad: function(oArgs){
 		blippex.libs.timespent.upload({

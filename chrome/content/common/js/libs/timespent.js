@@ -51,7 +51,8 @@ blippex.define('blippex.libs.timespent', {
 		if (blippex.core.tabs[tabId]
 				&& blippex.core.tabs[tabId].status == blippex.config.status.ok
 				&& blippex.core.tabs[tabId].timespent > blippex.config.values.timeout
-				&& !blippex.core.shuttingDown){
+				&& !blippex.core.shuttingDown
+				&& blippex.libs.disabled.isEnabled()){
 					blippex.browser.debug.log('sending time %s sec. for %s'.replace('%s',blippex.core.tabs[tabId].timespent).replace('%s',blippex.core.tabs[tabId].url))
 					blippex.api.upload.sendTime({
 						'timestamp':	blippex.core.tabs[tabId].timestamp,
@@ -75,15 +76,17 @@ blippex.define('blippex.libs.timespent', {
 	restoreSession: function(){
 		var localCache = blippex.browser.settings.get('timespentvalues');
 		blippex.browser.settings.set('timespentvalues', '');
-		for (var key in localCache){
-			if (/_ts$/i.test(key)){
-				var aItem = (localCache[key]+'').split('|');
-				if (aItem.length > 1 && aItem[2] > blippex.config.values.timeout){
-					blippex.api.upload.sendTime({
-						'timestamp':	aItem[0],
-						'url':				aItem[1],
-						'timespent':	aItem[2]
-					});
+		if (blippex.libs.disabled.isEnabled()){
+			for (var key in localCache){
+				if (/_ts$/i.test(key)){
+					var aItem = (localCache[key]+'').split('|');
+					if (aItem.length > 1 && aItem[2] > blippex.config.values.timeout){
+						blippex.api.upload.sendTime({
+							'timestamp':	aItem[0],
+							'url':				aItem[1],
+							'timespent':	aItem[2]
+						});
+					}
 				}
 			}
 		}
