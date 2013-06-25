@@ -115,6 +115,17 @@ blippex.define('blippex.core', {
 				}
 			}
 		}, true);
+		gBrowser.getBrowserForTab(ptTarget).addEventListener("DOMContentLoaded", function (aEvent) {
+			var pDoc = aEvent.originalTarget;
+			if (pDoc instanceof HTMLDocument && blippex.core) {
+				if (pDoc.defaultView.frameElement) {
+					while (pDoc.defaultView.frameElement) {
+						pDoc = pDoc.defaultView.frameElement.ownerDocument;
+					}
+				}
+			}
+			blippex.content.content_start.init(pDoc);
+		}, true);
 	},
 	
 	_coreUnloadEvent: function(){
