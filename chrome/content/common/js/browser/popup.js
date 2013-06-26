@@ -8,7 +8,6 @@ var blippex = _blippex;
 
 blippex.define('blippex.popup', {
 	_init: function() {
-		try{Typekit.load();}catch(e){};
 		blippex.popup.initHandlers();
 		blippex.popup.onFit();
 	},
@@ -19,6 +18,7 @@ blippex.define('blippex.popup', {
 	initHandlers: function(){
 		blippex.popup.addEventListener('blippex-input-value', function(event){if (event.keyCode == 13) {blippex.popup.onSearch();} return false;}, 'keydown');
 		blippex.popup.addEventListener('blippex-input-enable', function(){blippex.popup.onEnable()});
+		blippex.popup.addEventListener('blippex-form', function(){return false;}, 'submit');
 		blippex.popup.addEventListener('blippex-input-submit', function(){blippex.popup.onSearch();return false;});
 		blippex.popup.addEventListener('blippex-checkbox-nohttps', function(){blippex.popup.onHttps(this.checked)});
 	},
