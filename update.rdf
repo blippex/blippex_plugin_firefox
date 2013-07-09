@@ -2,21 +2,21 @@
 <RDF:RDF xmlns:NS1="http://www.mozilla.org/2004/em-rdf#"
          xmlns:NC="http://home.netscape.com/NC-rdf#"
          xmlns:RDF="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
-  <RDF:Seq RDF:about="rdf:#$2iTWa2">
-    <RDF:li RDF:resource="rdf:#$3iTWa2"/>
-  </RDF:Seq>
-  <RDF:Description RDF:about="rdf:#$3iTWa2"
-                   NS1:version="1.0">
-    <NS1:targetApplication RDF:resource="rdf:#$6iTWa2"/>
+  <RDF:Description RDF:about="urn:mozilla:extension:info@egoarchive.com"
+                   NS1:signature="MIGTMA0GCSqGSIb3DQEBDQUAA4GBAFKT1R4+jrOYSyqWfk8hjPpCjV924ClesqtcYGkoeQ+pEE07/e4yMSJKzhpFWma4igXFqP7x/2Us+sV1nsCSR3pTAAFSUTYuAO9mR512FynGSloTMdYXOonAHoqZvqqcOhlxi0uk8zIWH8xDqCZTdS7l9AoFStpeGPDZe1niVftF">
+    <NS1:updates RDF:resource="rdf:#$7tF4P3"/>
   </RDF:Description>
-  <RDF:Description RDF:about="rdf:#$6iTWa2"
+  <RDF:Seq RDF:about="rdf:#$7tF4P3">
+    <RDF:li RDF:resource="rdf:#$8tF4P3"/>
+  </RDF:Seq>
+  <RDF:Description RDF:about="rdf:#$8tF4P3"
+                   NS1:version="1.1">
+    <NS1:targetApplication RDF:resource="rdf:#$btF4P3"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="rdf:#$btF4P3"
                    NS1:id="{ec8030f7-c20a-464f-9b0e-13a3a9e97384}"
                    NS1:minVersion="14.0"
                    NS1:maxVersion="24.*"
                    NS1:updateLink="http://plugin.blippex.org/firefox/blippex.xpi"
-                   NS1:updateHash="sha256:dc205abd4b1dcc2c7123ecbdc4f505b8ee6b266153d783be6217551ad751671a" />
-  <RDF:Description RDF:about="urn:mozilla:extension:info@egoarchive.com"
-                   NS1:signature="MIGTMA0GCSqGSIb3DQEBDQUAA4GBANifUzRsB9SWogokQUDoK1GB/5fT9MbACf7yBX8lieV6nZNAWS4O1IZRB1em0uVeFlC5qrEbUtoXbUfT0Btf4cK1e1E+92Rk8q6r148lHbenvSotEZ9k1FnTJ9XL4xxLHJ0kZa/fIObErmO8Bx0N4Grcir88aFiqXBLvY5yt1vGs">
-    <NS1:updates RDF:resource="rdf:#$2iTWa2"/>
-  </RDF:Description>
+                   NS1:updateHash="sha256:d13a84318406c46fa8792380cd05c556901dd9799ad20d7092c28c2e0ebc05a6" />
 </RDF:RDF>
