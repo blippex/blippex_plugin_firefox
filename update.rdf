@@ -3,20 +3,20 @@
          xmlns:NC="http://home.netscape.com/NC-rdf#"
          xmlns:RDF="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
   <RDF:Description RDF:about="urn:mozilla:extension:info@egoarchive.com"
-                   NS1:signature="MIGTMA0GCSqGSIb3DQEBDQUAA4GBAFKT1R4+jrOYSyqWfk8hjPpCjV924ClesqtcYGkoeQ+pEE07/e4yMSJKzhpFWma4igXFqP7x/2Us+sV1nsCSR3pTAAFSUTYuAO9mR512FynGSloTMdYXOonAHoqZvqqcOhlxi0uk8zIWH8xDqCZTdS7l9AoFStpeGPDZe1niVftF">
-    <NS1:updates RDF:resource="rdf:#$7tF4P3"/>
+                   NS1:signature="MIGTMA0GCSqGSIb3DQEBDQUAA4GBAA5bxVVxfTEKyNP3HZ2zn0LdObNkmpp5DHqGyGiIAv+VmHokTenQLXPelGUulp/gNvh73CRAngybcY3I/fHs1ol7KqP4ifJ9aqH7neYGHDK7xcgpD7JgCI2Wy/y5bafmeSJauA5aKnGcbLtFxOI7mGafPQQSPLg43LzCCBapy2f8">
+    <NS1:updates RDF:resource="rdf:#$u6mnq3"/>
   </RDF:Description>
-  <RDF:Seq RDF:about="rdf:#$7tF4P3">
-    <RDF:li RDF:resource="rdf:#$8tF4P3"/>
+  <RDF:Seq RDF:about="rdf:#$u6mnq3">
+    <RDF:li RDF:resource="rdf:#$v6mnq3"/>
   </RDF:Seq>
-  <RDF:Description RDF:about="rdf:#$8tF4P3"
-                   NS1:version="1.1">
-    <NS1:targetApplication RDF:resource="rdf:#$btF4P3"/>
+  <RDF:Description RDF:about="rdf:#$v6mnq3"
+                   NS1:version="1.2">
+    <NS1:targetApplication RDF:resource="rdf:#$y6mnq3"/>
   </RDF:Description>
-  <RDF:Description RDF:about="rdf:#$btF4P3"
+  <RDF:Description RDF:about="rdf:#$y6mnq3"
                    NS1:id="{ec8030f7-c20a-464f-9b0e-13a3a9e97384}"
                    NS1:minVersion="14.0"
                    NS1:maxVersion="24.*"
                    NS1:updateLink="http://plugin.blippex.org/firefox/blippex.xpi"
-                   NS1:updateHash="sha256:d13a84318406c46fa8792380cd05c556901dd9799ad20d7092c28c2e0ebc05a6" />
+                   NS1:updateHash="sha256:5d20a8c995d6af363c91d99a232f1f3693f55598daf99fb2ca77a7a03e0f453d" />
 </RDF:RDF>
