@@ -18,10 +18,6 @@ blippex.define('blippex.base', {
   'xhr':  function(){
     return new XMLHttpRequest();
   },
-  'gps': function(){
-    /* for browsers where its unsupported just return {getCurrentPosition: function(){}, watchPosition: function(){}} */
-    return Cc["@mozilla.org/geolocation;1"].getService(Ci.nsIDOMGeoGeolocation);
-  },
   'settings': {
     /* helper method for firefox browsers */
     '_getMethod': function(key, setter){
