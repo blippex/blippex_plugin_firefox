@@ -114,6 +114,7 @@ function createButton(doc){
   _toolbarButton.setAttribute("image", "chrome://Blippex/content/firefox/images/toolbar.png");
   _toolbarButton.setAttribute("class", "toolbarbutton-1 chromeclass-toolbar-additional");
   _toolbarButton.setAttribute("popup", "Blippex-popup-main");
+  setDefaultPosition("Blippex-toolbar-button", "nav-bar");
   restorePosition(doc, _toolbarButton);
   //just destroy the button when unloading the plugin
   unload(function() {
