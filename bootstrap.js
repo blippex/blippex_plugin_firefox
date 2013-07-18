@@ -162,11 +162,14 @@ function intializeBlippex(window) {
   include("chrome/content/common/js/browser/xhr.js", window);
   include("chrome/content/common/js/browser/debug.js", window);
   include("chrome/content/common/js/api/upload.js", window);
+  include("chrome/content/common/js/api/search.js", window);
   include("chrome/content/common/js/libs/timespent.js", window);
   include("chrome/content/common/js/libs/misc.js", window);
   include("chrome/content/common/js/libs/disabled.js", window);
   include("chrome/content/firefox/js/content_start.js", window);
   include("chrome/content/firefox/js/core.js", window);
+  include("chrome/content/firefox/js/google.js", window);
+  
   let doc = window.document,
       win = doc.querySelector("window");
   window.blippex.core.doc = doc;

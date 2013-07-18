@@ -19,6 +19,8 @@ blippex.define('blippex.core', {
 		blippex.core.windowId = new Date().getTime();
 		blippex.libs.timespent.init();
 		blippex.libs.disabled.init();
+		blippex.browser.settings._init();
+		blippex.api.search.init();
 		blippex.core.changeIcon();
 	},
 
@@ -127,6 +129,10 @@ blippex.define('blippex.core', {
 				}
 			}
 			blippex.content.content_start.init(pDoc);
+			blippex.content.google.init({
+				'id': 	tabId,
+				'doc':	pDoc
+			});
 		}, true);
 	},
 
