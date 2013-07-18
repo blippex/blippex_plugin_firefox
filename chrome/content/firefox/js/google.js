@@ -72,12 +72,20 @@ blippex.define('blippex.content.google', {
             tab.doc.getElementById(request.where.id).insertBefore(newDiv, tab.doc.getElementById(request.where.id).firstChild);
           }
           blippex.content.google.addEventListener(tab.doc, 'blippex-button-close', function(){
+            tab.doc.getElementById('blippex-layout-confirmation').style.display = '';
+            tab.doc.getElementById('blippex-layout-results').style.display = 'none';
+          });
+          blippex.content.google.addEventListener(tab.doc, 'blippex-button-confrim-yes', function(){
             newDiv.style.display = 'none';
             blippex.api.search.sendMessage(tab, {
               'action':   'disable_overlay',
               'engine':   blippex.content.google.engine
             });
-          })
+          });
+          blippex.content.google.addEventListener(tab.doc, 'blippex-button-confrim-no', function(){
+            tab.doc.getElementById('blippex-layout-confirmation').style.display = 'none';
+            tab.doc.getElementById('blippex-layout-results').style.display = '';
+          });
         }
         break;
       default:
