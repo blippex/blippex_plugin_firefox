@@ -71,11 +71,23 @@ blippex.define('blippex.content.google', {
           } else {
             tab.doc.getElementById(request.where.id).insertBefore(newDiv, tab.doc.getElementById(request.where.id).firstChild);
           }
+          blippex.content.google.addEventListener(tab.doc, 'blippex-button-close', function(){
+            newDiv.style.display = 'none';
+            blippex.api.search.sendMessage(tab, {
+              'action':   'disable_overlay',
+              'engine':   blippex.content.google.engine
+            });
+          })
         }
         break;
       default:
     }
   },
+	addEventListener: function(doc, id, handler, event){
+    event = event || 'click';
+		doc.getElementById(id).parentNode.replaceChild(doc.getElementById(id).cloneNode(true), doc.getElementById(id));
+		doc.getElementById(id).addEventListener(event, handler);
+	},
   getQueryFromURL: function(doc) {
     var regex = new RegExp('[\?\&]q=([^\&#]+)');
     if (regex.test(doc.defaultView.location.href)) {
