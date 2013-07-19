@@ -97,7 +97,7 @@ blippex.define('blippex.content.google', {
 		doc.getElementById(id).addEventListener(event, handler);
 	},
   getQueryFromURL: function(doc) {
-    var regex = new RegExp('[\?\&]q=([^\&#]+)');
+    var regex = new RegExp('[\?\&\#]q=([^\&#]+)');
     if (regex.test(doc.defaultView.location.href)) {
       var q = doc.defaultView.location.href.split(regex);
       q = q[q.length - 2].replace(/\+/g, " ");
