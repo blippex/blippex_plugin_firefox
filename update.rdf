@@ -2,21 +2,21 @@
 <RDF:RDF xmlns:NS1="http://www.mozilla.org/2004/em-rdf#"
          xmlns:NC="http://home.netscape.com/NC-rdf#"
          xmlns:RDF="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
-  <RDF:Seq RDF:about="rdf:#$qeibC3">
-    <RDF:li RDF:resource="rdf:#$reibC3"/>
+  <RDF:Seq RDF:about="rdf:#$thdps2">
+    <RDF:li RDF:resource="rdf:#$uhdps2"/>
   </RDF:Seq>
-  <RDF:Description RDF:about="rdf:#$reibC3"
-                   NS1:version="1.2">
-    <NS1:targetApplication RDF:resource="rdf:#$ueibC3"/>
+  <RDF:Description RDF:about="urn:mozilla:extension:info@egoarchive.com"
+                   NS1:signature="MIGTMA0GCSqGSIb3DQEBDQUAA4GBAEvCmMyIYaPGrtF8xJlXIVJIR3Spr2OUZ8OYPmBtqulpSVpBXkpkIghKI71Mp5Ge3kXJjQrL4IY2UCoVoheBxjT04oYyYK80CvzIYRNfCNc9cZe0c3jmX19Gp9mcOoNdV304+a6UDjBEoEutTj6HFydvEGb3qIV9CnlpdONiS96k">
+    <NS1:updates RDF:resource="rdf:#$thdps2"/>
   </RDF:Description>
-  <RDF:Description RDF:about="rdf:#$ueibC3"
+  <RDF:Description RDF:about="rdf:#$xhdps2"
                    NS1:id="{ec8030f7-c20a-464f-9b0e-13a3a9e97384}"
                    NS1:minVersion="14.0"
                    NS1:maxVersion="25.*"
                    NS1:updateLink="https://s3-eu-west-1.amazonaws.com/plugin.blippex.org/firefox/blippex.xpi"
-                   NS1:updateHash="sha256:5d20a8c995d6af363c91d99a232f1f3693f55598daf99fb2ca77a7a03e0f453d" />
-  <RDF:Description RDF:about="urn:mozilla:extension:info@egoarchive.com"
-                   NS1:signature="MIGTMA0GCSqGSIb3DQEBDQUAA4GBAJMVwexeerPGdBzuPvAdaYv5dFlBwagt54NNvDaDXaDXDfsHFJqixhugNgMWTvZfaftWjR0DR4sVLyJnRUMTl4MduK9E+IJvVR/58h707D4c2XZw4+G7T+4QyNwYs022Brs7rS/bzakphfLmHukGfnG/a3HZQgUBtxjt9/+w9K1A">
-    <NS1:updates RDF:resource="rdf:#$qeibC3"/>
+                   NS1:updateHash="sha256:687a6ba6060348b4c8e917ecfae1d252d3b1788b5f7c3ba69dbd3ef0eb507d70" />
+  <RDF:Description RDF:about="rdf:#$uhdps2"
+                   NS1:version="1.21">
+    <NS1:targetApplication RDF:resource="rdf:#$xhdps2"/>
   </RDF:Description>
 </RDF:RDF>

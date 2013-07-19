@@ -5,9 +5,9 @@
     <em:id>blippex@extension</em:id>
     <em:type>2</em:type>
     <em:name>Blippex</em:name>
-    <em:version>1.2</em:version>
+    <em:version>1.21</em:version>
     <em:creator>Blippex</em:creator>
-			<em:updateURL>http://plugin.blippex.org/firefox/update.rdf</em:updateURL>
+			<em:updateURL>https://s3-eu-west-1.amazonaws.com/plugin.blippex.org/firefox/update.rdf</em:updateURL>
 		<em:updateKey>MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDZ+oVj6V4R/IAtUSE9xSE3MJWCBRqJzm5aiz+R3IMatGBaArIWDSZRyOGSY27pP+qKbyO/67vmZ7UF+HlHkCkZdxgGeBBIY4rcC1Q1PSp3imknxr3Xzn2QGtZD+ad4qJT7EWH8JKdJXUp49jY2vLuPE/04A5CQ/00K37tKUV1OpwIDAQAB</em:updateKey>
 		<em:iconURL>chrome://Blippex/content/firefox/images/icon48.png</em:iconURL>
     <em:homepageURL>https://www.blippex.org/</em:homepageURL>
